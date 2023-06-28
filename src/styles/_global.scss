@@ -1,0 +1,102 @@
+/* global values*/
+
+$base-font-size: 16px;
+$small-font-size: 12px;
+$base-font-color: #222222;
+$base-font-hover-color: #ba3b0a;
+$base-bg-color: #f2f2f2;
+$base-font-kr: "Nanum Gothic Coding", monospace;
+$base-font-en: "JosefinSans";
+
+/* fontSet Usage: size, color */
+@mixin fontSet($type, $color) {
+  @if ($type == type-s) {
+    font-size: $small-font-size;
+    color: $color;
+  }
+  @if ($type == type-n) {
+    font-size: $base-font-size;
+    color: $color;
+  }
+}
+
+/* textBoxXet Usage: type-a, type-b */
+@mixin textBoxSet($type) {
+  @if ($type == type-a) {
+    padding: 16px;
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+  }
+  @if ($type == type-b) {
+    padding: 14px;
+    color: #fff;
+    background-color: #333;
+  }
+}
+
+/* BASIC FONT */
+@font-face {
+  font-family: "JosefinSans";
+  src: url(../assets/JosefinSansBold.ttf);
+}
+
+/* BUTTON */
+
+.btn {
+  $btn-color--default: #e2e6ea;
+  $btn-color--success: #61bd4f;
+  $btn-color--danger: #eb5a46;
+  $text-color--default: #212529;
+  $text-color--colorful: #fff;
+
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: $btn-color--default;
+  color: $text-color--default;
+  border-radius: 4px;
+  line-height: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  &:hover {
+    background-color: darken($btn-color--default, 10%);
+  }
+  &.success {
+    background-color: $btn-color--success;
+    color: $text-color--colorful;
+    &:hover {
+      background-color: darken($btn-color--success, 10%);
+    }
+  }
+  &.danger {
+    background-color: $btn-color--danger;
+    color: $text-color--colorful;
+    &:hover {
+      background-color: darken($btn-color--danger, 10%);
+    }
+    &::after {
+      content: "!";
+    }
+  }
+  &.small {
+    font-size: 12px;
+    padding: 0 6px;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.list {
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  font-family: $base-font-kr;
+  @include fontSet($base-font-size, $base-font-color);
+  &:hover {
+    @include fontSet(type-n, $base-font-hover-color);
+  }
+}
