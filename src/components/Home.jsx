@@ -3,11 +3,12 @@ import Slider from "./Slider";
 
 const Home = () => {
   return (
-    <content className="section__body">
-      <div className="section__slider">
+    <section className="contents">
+      <article className="slider">
         <Slider />
-      </div>
-    </content>
+      </article>
+      <article></article>
+    </section>
   );
 };
 

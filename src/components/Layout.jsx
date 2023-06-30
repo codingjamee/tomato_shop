@@ -7,7 +7,7 @@ import UtilNav from "./UtilNav";
 
 const Layout = () => {
   return (
-    <>
+    <div className="layout__wrapper">
       <header className="fixed head">
         <Util />
       </header>
@@ -20,7 +20,7 @@ const Layout = () => {
           <UtilNav />
         </div>
       </aside>
-    </>
+    </div>
   );
 };
 
