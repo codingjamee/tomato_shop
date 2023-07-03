@@ -1,12 +1,61 @@
+@keyframes hoverOpa {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
 .contents {
   margin: 0 auto;
-  padding: 40px 4vw 0 260px;
+  padding: 40px 4vw 0 calc(4vw + 200px);
   min-height: 600px;
   display: block;
-  height: 2000px;
   position: relative;
 }
 .slider {
-  height: 50%;
-  margin-top: 5rem;
+  width: 100%;
+  max-height: 80vh;
+  margin: 5rem auto;
+  background-color: aquamarine;
+}
+
+.banner {
+  display: flex;
+  min-height: 80vh;
+  width: 100%;
+  margin: 10px;
+  background-color: darkgray;
+
+  // width: 70vw;
+  &__wrapper {
+    margin: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background-size: cover;
+    background-color: darkcyan;
+    &:hover {
+      animation: hoverOpa 1.5s forwards;
+    }
+  }
+  &__img {
+    width: 100%;
+    display: block;
+
+    // position: absolute;
+  }
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 7vw;
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    z-index: 1;
+    text-overflow: ellipsis;
+  }
 }

@@ -1,5 +1,6 @@
 import "../styles/style.scss";
 import Slider from "./Slider";
+import SubBnr from "./SubBnr";
 
 const Home = () => {
   return (
@@ -7,7 +8,10 @@ const Home = () => {
       <article className="slider">
         <Slider />
       </article>
-      <article></article>
+      <article className="banner">
+        <SubBnr />
+        <SubBnr />
+      </article>
     </section>
   );
 };

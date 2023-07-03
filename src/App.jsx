@@ -10,6 +10,7 @@ function App() {
       <Layout />
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/new-arrival" element={<NewArrival />} /> */}
       </Routes>
     </>
   );
