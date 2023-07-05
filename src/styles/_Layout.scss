@@ -15,7 +15,7 @@
   opacity: 0.8;
   z-index: 9999;
   &__list {
-    padding: 5px;
+    padding: 1rem;
     justify-content: flex-end;
   }
   &__item {
@@ -32,11 +32,12 @@
 }
 
 .aside {
-  background-color: bisque;
   left: 4vw;
-  top: 40px;
+  top: 45px;
   display: block;
   width: 200px;
+  height: 100vh;
+  background-color: $base-bg-color;
   &__logo-wrapper {
     width: 160px;
     overflow: hidden;
@@ -62,6 +63,11 @@
   }
 }
 
+@include mobile {
+  .aside {
+    display: none;
+  }
+}
 .util-nav {
   &__wrapper {
     margin-top: 3rem;

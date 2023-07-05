@@ -45,7 +45,7 @@ const Slider = () => {
       className="mySwiper"
     >
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <img src="https://picsum.photos/id/216/500/300" />
       </SwiperSlide>
       <SwiperSlide>
         <img src="https://swiperjs.com/demos/images/nature-2.jpg" />

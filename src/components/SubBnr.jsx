@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const SubBnr = () => {
+const SubBnr = (props) => {
   return (
     <div className="banner__wrapper">
       <img
@@ -9,7 +9,7 @@ const SubBnr = () => {
         alt=""
       />
       <div className="banner__text">
-        <h3>New arrivals</h3>
+        <h3>{props.text}</h3>
         <p></p>
         <Link />
       </div>
