@@ -9,7 +9,7 @@
 
 .content {
   margin: 0 auto;
-  padding: 40px 4vw 0 calc(4vw + 200px);
+  padding: 48px 4vw 0 calc(4vw + 200px);
   min-height: 600px;
   display: block;
   position: relative;
@@ -36,7 +36,6 @@
     width: 100%;
     max-width: 100%;
     background-size: cover;
-    background-color: darkcyan;
     &:hover {
       animation: hoverOpa 1.5s forwards;
     }
@@ -59,6 +58,7 @@
     overflow: hidden;
     word-break: break-word;
     text-overflow: ellipsis;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     color: white;
     user-select: none;
     z-index: 1;

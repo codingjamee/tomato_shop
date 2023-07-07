@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/style.scss";
 import Logo from "./Logo";
 
@@ -13,7 +14,9 @@ const Layout = () => {
       </header>
       <aside className="aside fixed">
         <div className="aside__logo-wrapper">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <div className="nav__wrapper">
           <Nav />
