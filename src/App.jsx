@@ -11,7 +11,7 @@ function App() {
       <Layout />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/best" element={<CatePage title="베스트" />} />
+        <Route path="/best" element={<CatePage title="best" />} />
         <Route path="/new" element={<CatePage title="신상품" />} />
         <Route path="/basic" element={<CatePage title="베이직" />} />
         <Route path="/outer" element={<CatePage title="아우터" />} />
