@@ -11,16 +11,16 @@ function App() {
       <Layout />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/best" element={<CatePage title="best" />} />
-        <Route path="/new" element={<CatePage title="신상품" />} />
-        <Route path="/basic" element={<CatePage title="베이직" />} />
-        <Route path="/outer" element={<CatePage title="아우터" />} />
-        <Route path="/top" element={<CatePage title="상의" />} />
-        <Route path="/dress" element={<CatePage title="원피스/치마" />} />
-        <Route path="/bottom" element={<CatePage title="하의" />} />
-        <Route path="/basic" element={<CatePage title="베이직" />} />
-        <Route path="/set" element={<CatePage title="세트" />} />
-        <Route path="/sale" element={<CatePage title="세일" />} />
+        <Route path="/best" element={<CatePage url="best" />} />
+        <Route path="/new" element={<CatePage url="new" />} />
+        <Route path="/basic" element={<CatePage url="basic" />} />
+        <Route path="/outer" element={<CatePage url="outer" />} />
+        <Route path="/top" element={<CatePage url="top" />} />
+        <Route path="/dress" element={<CatePage url="dress" />} />
+        <Route path="/bottom" element={<CatePage url="bottom" />} />
+        <Route path="/basic" element={<CatePage url="basic" />} />
+        <Route path="/set" element={<CatePage url="set" />} />
+        <Route path="/sale" element={<CatePage url="sale" />} />
       </Routes>
     </>
   );
