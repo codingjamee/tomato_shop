@@ -1,19 +1,19 @@
 .slider {
   margin: 0 auto;
   margin-top: 2rem;
-  margin-bottom: 5rem;
 }
 
 .swiper {
-  width: 100%;
+  height: 80%;
+  &-wrapper {
+    background-size: cover;
+  }
   &-slide {
-    // width: 30px;
-    // height: 300px;
+    max-height: 70vh;
     & img {
-      max-height: 735px;
       display: block;
-      width: 90%;
       margin: 0 auto;
+      overflow: hidden;
     }
   }
 }

@@ -45,28 +45,28 @@ const Slider = () => {
       className="mySwiper"
     >
       <SwiperSlide>
-        <img src="https://picsum.photos/id/216/500/300" />
+        <img src="https://picsum.photos/id/216/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        <img src="https://picsum.photos/id/342/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        <img src="https://picsum.photos/id/264/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        <img src="https://picsum.photos/id/364/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        <img src="https://picsum.photos/id/854/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        <img src="https://picsum.photos/id/228/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        <img src="https://picsum.photos/id/908/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        <img src="https://picsum.photos/id/396/1000/1000" />
       </SwiperSlide>
     </Swiper>
   );
