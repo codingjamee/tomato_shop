@@ -1,0 +1,35 @@
+/* MOBILE */
+
+@include mobile {
+  .content {
+    padding: 40px 4vw 0;
+  }
+  .aside {
+    display: none;
+  }
+  .card {
+    &__wrapper {
+      width: 50vw;
+      height: 75vw;
+      overflow: hidden;
+    }
+  }
+}
+
+/* TABLET */
+
+@include tablet {
+  .content {
+    padding: 40px 4vw 0;
+  }
+  .aside {
+    display: none;
+  }
+  .card {
+    &__wrapper {
+      width: calc(80vw / 3 + 0.5rem);
+      height: calc(80vw / 2 - 0.3rem);
+      overflow: hidden;
+    }
+  }
+}
