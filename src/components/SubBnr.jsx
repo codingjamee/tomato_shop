@@ -9,9 +9,10 @@ const SubBnr = (props) => {
         alt=""
       />
       <div className="banner__text">
-        <h3>{props.text}</h3>
+        <Link to={props.url} className="banner__link">
+          {props.text}
+        </Link>
         <p></p>
-        <Link />
       </div>
     </div>
   );

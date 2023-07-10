@@ -10,8 +10,8 @@ const Home = () => {
           <Slider />
         </article>
         <article className="banner">
-          <SubBnr text="New arrivals" />
-          <SubBnr text="Best 30" />
+          <SubBnr text="New arrivals" url="/new" />
+          <SubBnr text="Best 30" url="/best" />
         </article>
         <article>
           <p>지금 진행중인 이벤트</p>

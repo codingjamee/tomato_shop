@@ -31,7 +31,7 @@ const CatePage = (props) => {
             <ul className="page__body">
               {loadedCates[0]?.results &&
                 loadedCates[0]?.results.map((dummy) => (
-                  <li className="card">
+                  <li className="card" key={dummy.id}>
                     {/* 어떤 크기의 이미지를 넣어도 맞게 렌더링 되어야....! */}
                     <div className="card__wrapper">
                       <img

@@ -57,7 +57,7 @@ const Slider = () => {
         <img src="https://picsum.photos/id/364/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://picsum.photos/id/854/1000/1000" />
+        <img src="https://picsum.photos/id/877/1000/1000" />
       </SwiperSlide>
       <SwiperSlide>
         <img src="https://picsum.photos/id/228/1000/1000" />
