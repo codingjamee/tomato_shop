@@ -1,11 +1,39 @@
 .page {
   &__wrapper {
-    width: 100%;
-    max-height: 80vh;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  &__body {
+    text-align: center;
   }
   &__title {
+    transform: translateX(45%);
     margin: 0 auto;
     margin-top: 2rem;
     margin-bottom: 5rem;
+    & h1 {
+      @include fontSet(kr, $big-font-size, $base-font-color);
+    }
+  }
+}
+
+.card {
+  display: inline-block;
+  margin: 10px 30px 10px;
+  &__wrapper {
+    width: calc(70vw / 2 - 80px);
+    overflow: hidden;
+  }
+  &__img {
+    width: 100%;
+  }
+}
+
+@include mobile {
+  .card {
+    &__wrapper {
+      width: 70vw;
+      overflow: hidden;
+    }
   }
 }

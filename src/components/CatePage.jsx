@@ -27,21 +27,24 @@ const CatePage = (props) => {
           {/* map을 사용해서 정보를 뿌려줌
                 정보는 백엔드에서 요청해 받아온 것 
               */}
-          {loadedCates[0]?.results &&
-            loadedCates[0]?.results.map((dummy) => (
-              <article>
-                <div className="page__body">
-                  <div className="card">
-                    <img
-                      src={dummy.card__imgUrl}
-                      alt=""
-                      className="card__img"
-                    />
+          <article className="page__wrapper">
+            <ul className="page__body">
+              {loadedCates[0]?.results &&
+                loadedCates[0]?.results.map((dummy) => (
+                  <li className="card">
+                    {/* 어떤 크기의 이미지를 넣어도 맞게 렌더링 되어야....! */}
+                    <div className="card__wrapper">
+                      <img
+                        src={dummy.card__imgUrl}
+                        alt=""
+                        className="card__img"
+                      />
+                    </div>
                     <h2 className="card__title">{dummy.card_title}</h2>
-                  </div>
-                </div>
-              </article>
-            ))}
+                  </li>
+                ))}
+            </ul>
+          </article>
         </div>
       </section>
     </>

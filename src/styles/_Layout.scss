@@ -24,9 +24,9 @@
   }
   &__link {
     text-decoration: none;
-    @include fontSet(type-s, $base-font-color);
+    @include fontSet(kr, $small-font-size, $base-font-color);
     &:hover {
-      @include fontSet(type-s, $base-font-hover-color);
+      @include fontSet(kr, $small-font-size, $base-font-hover-color);
     }
   }
 }
@@ -80,9 +80,9 @@
     line-height: 1.5rem;
   }
   &__link {
-    @include fontSet(type-s, $base-font-color);
+    @include fontSet(kr, $small-font-size, $base-font-color);
     &:hover {
-      @include fontSet(type-s, $base-font-hover-color);
+      @include fontSet(kr, $small-font-size, $base-font-hover-color);
     }
   }
 }

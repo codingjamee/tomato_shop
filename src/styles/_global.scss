@@ -1,6 +1,7 @@
 /* global values*/
 
-$base-font-size: 20px;
+$big-font-size: 30px;
+$base-font-size: 18px;
 $small-font-size: 14px;
 $base-font-color: #222222;
 $base-font-hover-color: #ba3b0a;
@@ -12,13 +13,15 @@ $breakpoint-tablet: 758px;
 $breakpoint-desktop: 1024px;
 
 /* fontSet Usage: size, color */
-@mixin fontSet($type, $color) {
-  @if ($type == type-s) {
-    font-size: $small-font-size;
+@mixin fontSet($lang, $size, $color) {
+  @if ($lang == kr) {
+    font-size: $size;
+    font-family: $base-font-kr;
     color: $color;
   }
-  @if ($type == type-n) {
-    font-size: $base-font-size;
+  @if ($lang == en) {
+    font-size: $size;
+    font-family: $base-font-en;
     color: $color;
   }
 }
@@ -120,9 +123,8 @@ $breakpoint-desktop: 1024px;
 
 .link {
   text-decoration: none;
-  font-family: $base-font-kr;
-  @include fontSet($base-font-size, $base-font-color);
+  @include fontSet(kr, $base-font-size, $base-font-color);
   &:hover {
-    @include fontSet(type-n, $base-font-hover-color);
+    @include fontSet(kr, $base-font-size, $base-font-hover-color);
   }
 }
