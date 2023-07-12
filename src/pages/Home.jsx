@@ -1,6 +1,6 @@
 import "../styles/style.scss";
-import Slider from "./Slider";
-import SubBnr from "./SubBnr";
+import Slider from "../components/Slider";
+import SubBnr from "../components/SubBnr";
 
 const Home = () => {
   return (

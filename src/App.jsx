@@ -1,11 +1,13 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import "./App.css";
 
 import Layout from "./components/Layout";
-import Home from "./components/Home";
-import CatePage from "./components/CatePage";
+import Home from "./pages/Home";
+import CatePage from "./pages/CatePage";
+import DetailPage from "./pages/DetailPage";
 
 function App() {
+  const { id } = useParams();
   return (
     <>
       <Layout />
@@ -21,6 +23,7 @@ function App() {
         <Route path="/basic" element={<CatePage url="basic" />} />
         <Route path="/set" element={<CatePage url="set" />} />
         <Route path="/sale" element={<CatePage url="sale" />} />
+        <Route path="/:id" element={<DetailPage />} />
       </Routes>
     </>
   );

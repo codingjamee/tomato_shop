@@ -81,3 +81,46 @@
     }
   }
 }
+
+.detail-nav {
+  position: fixed;
+  right: 0;
+  top: 50px;
+  width: 30vw;
+  min-height: 60vh;
+  border: 1px solid black;
+  border-radius: 10%;
+  @include fontSet(kr, $middle-font-size, $base-font-color);
+  &__wrapper {
+    margin: 10px;
+    background-color: aquamarine;
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    & label {
+      display: inline-block;
+      width: 40%;
+    }
+
+    & select {
+      position: absolute;
+      right: 1rem;
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  margin-top: 50px;
+  & button {
+    width: calc(100% / 2);
+    height: 50px;
+  }
+}

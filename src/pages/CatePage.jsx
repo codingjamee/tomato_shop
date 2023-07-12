@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CatePage = (props) => {
   const [loadedCates, setLoadedCates] = useState([]);
@@ -34,11 +35,13 @@ const CatePage = (props) => {
                   <li className="card" key={dummy.id}>
                     {/* 어떤 크기의 이미지를 넣어도 맞게 렌더링 되어야....! */}
                     <div className="card__wrapper">
-                      <img
-                        src={dummy.card__imgUrl}
-                        alt=""
-                        className="card__img"
-                      />
+                      <Link to={`/${dummy.id}`}>
+                        <img
+                          src={dummy.card__imgUrl}
+                          alt=""
+                          className="card__img"
+                        />
+                      </Link>
                     </div>
                     <h2 className="card__title">{dummy.card_title}</h2>
                   </li>
