@@ -1,0 +1,38 @@
+.table {
+  table-layout: fixed; // border-collapse: collapse;
+  width: 70vw;
+  // border: 1px solid $base-font-color;
+  margin: 0 auto;
+  &__row {
+    border: 1px solid $base-font-color;
+  }
+  &__data {
+    // border: 1px solid $base-font-color;
+    display: table-row;
+    height: 0;
+  }
+  &__title {
+    table-layout: fixed; // border-collapse: collapse;
+    width: 100px;
+    text-align: left;
+    padding-left: 30px;
+    border: 1px solid $base-font-color;
+  }
+  &__input {
+    margin: 10px;
+    width: 100%;
+  }
+}
+
+.img-view {
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.form {
+  &__input {
+    margin: 10px;
+  }
+}

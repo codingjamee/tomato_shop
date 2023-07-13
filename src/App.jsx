@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import CatePage from "./pages/CatePage";
 import DetailPage from "./pages/DetailPage";
+import Admin from "./pages/Admin";
 
 function App() {
   const { id } = useParams();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/set" element={<CatePage url="set" />} />
         <Route path="/sale" element={<CatePage url="sale" />} />
         <Route path="/:id" element={<DetailPage />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </>
   );

@@ -1,0 +1,23 @@
+.img-add-box {
+  border: 1px solid $gray-color;
+  color: $bold-gray-color;
+  height: 100%;
+  margin: 10px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  &__plus {
+    font-size: 100px;
+  }
+  &__label {
+    position: relative;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  font-size: 100px;
+  color: $gray-color;
+}
