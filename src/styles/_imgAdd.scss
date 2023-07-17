@@ -37,12 +37,13 @@
   }
   &__wrapper {
     position: relative;
-    background-size: cover;
     width: 150px;
     height: 230px;
+    background-size: cover;
   }
   & img {
     width: 100%;
+    max-height: 200px;
   }
   &__btn {
     margin: 15px 3px;
