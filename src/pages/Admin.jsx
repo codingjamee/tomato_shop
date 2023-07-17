@@ -3,8 +3,10 @@ import ImgAdd from "../components/UI/ImgAdd";
 
 const Admin = () => {
   const [imgView, setImgView] = useState("");
-  const [moreImgView, setMoreImgView] = useState("");
-  const moreImgRef = useRef();
+  const [imgView_1, setImgView_1] = useState("");
+  const [imgView_2, setImgView_2] = useState("");
+  const [imgView_3, setImgView_3] = useState("");
+  const [imgView_4, setImgView_4] = useState("");
 
   return (
     <section className="content">
@@ -47,10 +49,10 @@ const Admin = () => {
                 </td>
                 <td className="table__data">
                   <div className="table__data--add">
-                    <ImgAdd imgView={imgView} setImgView={setImgView} />
-                    <ImgAdd imgView={imgView} setImgView={setImgView} />
-                    <ImgAdd imgView={imgView} setImgView={setImgView} />
-                    <ImgAdd imgView={imgView} setImgView={setImgView} />
+                    <ImgAdd imgView={imgView_1} setImgView={setImgView_1} />
+                    <ImgAdd imgView={imgView_2} setImgView={setImgView_2} />
+                    <ImgAdd imgView={imgView_3} setImgView={setImgView_3} />
+                    <ImgAdd imgView={imgView_4} setImgView={setImgView_4} />
                   </div>
                 </td>
               </tr>
