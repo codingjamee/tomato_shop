@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
 const ImgAdd = (props) => {
+  const [imgView, setImgView] = useState("");
   const imgRef = useRef();
 
   const saveImgView = () => {
@@ -8,22 +9,24 @@ const ImgAdd = (props) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
-      props.setImgView(reader.result);
+      setImgView(reader.result);
     };
+
+    console.log(imgView);
   };
   return (
     <div className="img-add-box">
-      {props.imgView && (
+      {imgView && (
         <div className="img-view">
           <p>미리보기</p>
           <div className="img-view__wrapper">
             <div className="img-view__img">
-              <img src={props.imgView} alt="" />
+              <img src={imgView} alt="" />
             </div>
             <button
               className="btn img-view__btn"
               onClick={() => {
-                props.setImgView();
+                setImgView();
               }}
             >
               삭제하기
@@ -31,20 +34,20 @@ const ImgAdd = (props) => {
           </div>
         </div>
       )}
-      {!props.imgView && (
+      {!imgView && (
         <div className="img-add-box__wrapper">
           <div className="img-add-box__plus">
             <span className="material-symbols-outlined">add_circle</span>
           </div>
           <p>이미지를 추가해주세요</p>
-          <label htmlFor="imgAdd" className="img-add-box__label btn">
+          <label htmlFor={props.id} className="img-add-box__label btn">
             업로드
           </label>
           <input
+            id={props.id}
             type="file"
             accept="image/*"
             style={{ display: "none" }}
-            id="imgAdd"
             onChange={saveImgView}
             ref={imgRef}
           />
