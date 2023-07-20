@@ -49,6 +49,8 @@ const Admin = () => {
     value: "",
     isValid: false,
   });
+  const [imgView, setImgView] = useState({});
+
   //title, selectHandler validation check???
   const [formIsValid, setFormIsValid] = useState(false);
   const { isValid: titleIsValid } = titleState;
@@ -82,9 +84,15 @@ const Admin = () => {
     dispatchSelect({ type: "SELECT_BLUR" });
   };
 
+  const imgHandler = (imgUrl, imgId) => {
+    console.log("imgHandler");
+    setImgView({ ...imgView, [imgId]: `${imgUrl}` });
+    console.log(imgView);
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(titleState, selectState);
+    console.log(titleState, selectState, imgView);
   };
 
   return (
@@ -129,7 +137,11 @@ const Admin = () => {
                 <TdataTitle>기본이미지</TdataTitle>
                 <Tdata>
                   <div className="table__data--add">
-                    <ImgAdd id="num1" />
+                    <ImgAdd
+                      id="img1"
+                      imgHandler={imgHandler}
+                      imgView={imgView}
+                    />
                   </div>
                 </Tdata>
               </Trow>
@@ -139,10 +151,26 @@ const Admin = () => {
                 </TdataTitle>
                 <Tdata>
                   <div className="table__data--add">
-                    <ImgAdd id="num2" />
-                    <ImgAdd id="num3" />
-                    <ImgAdd id="num4" />
-                    <ImgAdd id="num5" />
+                    <ImgAdd
+                      id="img2"
+                      imgHandler={imgHandler}
+                      imgView={imgView}
+                    />
+                    <ImgAdd
+                      id="img3"
+                      imgHandler={imgHandler}
+                      imgView={imgView}
+                    />
+                    <ImgAdd
+                      id="img4"
+                      imgHandler={imgHandler}
+                      imgView={imgView}
+                    />
+                    <ImgAdd
+                      id="img5"
+                      imgHandler={imgHandler}
+                      imgView={imgView}
+                    />
                   </div>
                 </Tdata>
               </Trow>
