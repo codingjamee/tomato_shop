@@ -39,6 +39,15 @@ const selectReducer = (state, action) => {
   return { value: "", isValid: false };
 };
 
+const priceReducer = (state, action) => {
+  if (action.type === "PRICE_INPUT") {
+    return { value: action.value, isValid: action.value > 0 };
+  }
+  if (action.type === "PRICE_BLUR") {
+    return { value: state.value, isValid: state.value > 0 };
+  }
+};
+
 const Admin = () => {
   const [titleState, dispatchTitle] = useReducer(titleReducer, {
     value: "",
@@ -47,6 +56,11 @@ const Admin = () => {
 
   const [selectState, dispatchSelect] = useReducer(selectReducer, {
     value: "",
+    isValid: false,
+  });
+
+  const [priceState, dispatchPrice] = useReducer(priceReducer, {
+    value: 0,
     isValid: false,
   });
   const [imgView, setImgView] = useState({});
@@ -58,17 +72,11 @@ const Admin = () => {
   const { isValid: selectIsValid } = selectState;
 
   useEffect(() => {
-    console.log("titleIsValid", titleIsValid);
-    console.log("selectIsValid", selectIsValid);
-
     setFormIsValid(titleIsValid && selectIsValid && !!imgView["img1"]);
-    console.log("formIsValid", formIsValid);
   }, [titleIsValid, selectIsValid, formIsValid, imgView]);
 
   const titleValChangeHandler = (e) => {
     dispatchTitle({ type: "USER_INPUT", value: e.target.value });
-    console.log("titlechange");
-    console.log(titleState);
   };
 
   const titleBlurHandler = () => {
@@ -77,18 +85,20 @@ const Admin = () => {
 
   const selectHandler = (e) => {
     dispatchSelect({ type: "USER_SELECT", value: e.target.value });
-    console.log("selectchange");
-
-    console.log(selectState);
   };
   const selectBlurHandler = () => {
     dispatchSelect({ type: "SELECT_BLUR" });
   };
 
+  const priceChangeHandler = (e) => {
+    dispatchPrice({ type: "PRICE_INPUT", value: e.target.value });
+  };
+  const priceBlurHandler = () => {
+    dispatchPrice({ type: "PRICE_BLUR" });
+  };
+
   const imgHandler = (imgUrl, imgId) => {
-    console.log("imgHandler");
     setImgView({ ...imgView, [imgId]: `${imgUrl}` });
-    console.log(imgView);
   };
 
   const productDetailInput = (e) => {
@@ -119,7 +129,7 @@ const Admin = () => {
                 <TdataTitle>
                   <label htmlFor="productTitle">상품명</label>
                 </TdataTitle>
-                <TdataTitle>
+                <Tdata>
                   <div className="table__cate">
                     <input
                       className="table__input"
@@ -136,7 +146,24 @@ const Admin = () => {
                       selectState={selectState}
                     />
                   </div>
+                </Tdata>
+              </Trow>
+              <Trow>
+                <TdataTitle>
+                  <label htmlFor="productPrice">가격</label>
                 </TdataTitle>
+                <Tdata>
+                  <div className="table__input--left">
+                    <input
+                      className="table__input table__input--price"
+                      id="productPrice"
+                      type="number"
+                      onChange={priceChangeHandler}
+                      onBlur={priceBlurHandler}
+                      value={priceState.value}
+                    />
+                  </div>
+                </Tdata>
               </Trow>
               <Trow>
                 <TdataTitle>기본이미지(필수입력)</TdataTitle>

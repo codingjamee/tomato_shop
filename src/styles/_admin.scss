@@ -33,6 +33,7 @@
     height: 0;
     width: 40%;
     padding: 0 20px 0;
+
     &--add {
       max-width: 80vw;
       display: flex;
@@ -55,7 +56,10 @@
     margin: 10px;
     flex-grow: 2;
     // width: 95%;
-    text-align: left;
+    &--left {
+      text-align: left;
+      width: 40%;
+    }
   }
   &__select {
     margin: 10px;
