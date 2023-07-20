@@ -19,12 +19,12 @@ const ImgAdd = (props) => {
 
   return (
     <div className="img-add-box">
-      {props.imgView[`${imgId}`] && (
+      {props.imgView[imgId] && (
         <div className="img-view">
           <p>미리보기</p>
           <div className="img-view__wrapper">
             <div className="img-view__img">
-              <img src={props.imgView[`${imgId}`]} alt="" />
+              <img src={props.imgView[imgId]} alt="" />
             </div>
             <button
               className="btn img-view__btn"
@@ -37,7 +37,7 @@ const ImgAdd = (props) => {
           </div>
         </div>
       )}
-      {!props.imgView[`${imgId}`] && (
+      {!props.imgView[imgId] && (
         <div className="img-add-box__wrapper">
           <div className="img-add-box__plus">
             <span className="material-symbols-outlined">add_circle</span>

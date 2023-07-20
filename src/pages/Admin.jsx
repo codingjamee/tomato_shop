@@ -50,6 +50,7 @@ const Admin = () => {
     isValid: false,
   });
   const [imgView, setImgView] = useState({});
+  const [detailState, setDetailState] = useState("");
 
   //title, selectHandler validation check???
   const [formIsValid, setFormIsValid] = useState(false);
@@ -60,9 +61,9 @@ const Admin = () => {
     console.log("titleIsValid", titleIsValid);
     console.log("selectIsValid", selectIsValid);
 
-    setFormIsValid(titleIsValid && selectIsValid);
+    setFormIsValid(titleIsValid && selectIsValid && !!imgView["img1"]);
     console.log("formIsValid", formIsValid);
-  }, [titleIsValid, selectIsValid, formIsValid]);
+  }, [titleIsValid, selectIsValid, formIsValid, imgView]);
 
   const titleValChangeHandler = (e) => {
     dispatchTitle({ type: "USER_INPUT", value: e.target.value });
@@ -90,9 +91,13 @@ const Admin = () => {
     console.log(imgView);
   };
 
+  const productDetailInput = (e) => {
+    setDetailState(e.target.value);
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(titleState, selectState, imgView);
+    console.log(titleState, selectState, imgView, detailState);
   };
 
   return (
@@ -134,7 +139,7 @@ const Admin = () => {
                 </TdataTitle>
               </Trow>
               <Trow>
-                <TdataTitle>기본이미지</TdataTitle>
+                <TdataTitle>기본이미지(필수입력)</TdataTitle>
                 <Tdata>
                   <div className="table__data--add">
                     <ImgAdd
@@ -185,6 +190,7 @@ const Admin = () => {
                       id=""
                       rows="10"
                       className="table__textarea-item"
+                      onBlur={productDetailInput}
                     ></textarea>
                   </div>
                 </Tdata>
