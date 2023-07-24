@@ -1,21 +1,25 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const ImgAdd = (props) => {
   const imgRef = useRef();
   const imgId = props.id;
 
   const saveImgView = (e) => {
-    const file = imgRef.current.files[0];
-    const reader = new FileReader();
+    const file = e.target.files[0];
+    let reader;
+    if (file) {
+      reader = new FileReader();
+      reader.onloadend = () => {
+        console.log(file);
+        props.imgHandler(reader.result, e.target.id, file);
+      };
+    }
     reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      props.imgHandler(reader.result, e.target.id);
-    };
   };
 
-  useEffect(() => {
-    console.log(props.imgView.imgId);
-  }, [props.imgView.imgId]);
+  // useEffect(() => {
+  //   console.log(props.imgView.imgId);
+  // }, [props.imgView.imgId]);
 
   return (
     <div className="img-add-box">

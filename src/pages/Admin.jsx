@@ -65,6 +65,7 @@ const Admin = () => {
   });
   const [imgView, setImgView] = useState({});
   const [detailState, setDetailState] = useState("");
+  const [selectedFiles, setSelectedFiles] = useState(null);
 
   //title, selectHandler validation check???
   const [formIsValid, setFormIsValid] = useState(false);
@@ -97,23 +98,47 @@ const Admin = () => {
     dispatchPrice({ type: "PRICE_BLUR" });
   };
 
-  const imgHandler = (imgUrl, imgId) => {
-    setImgView({ ...imgView, [imgId]: `${imgUrl}` });
+  const imgHandler = (imgData, imgId, file) => {
+    const formData = new FormData();
+    formData.append(imgId, file);
+    console.log(file);
+    setSelectedFiles(formData);
+
+    setImgView({ ...imgView, [imgId]: `${imgData}` });
   };
 
   const productDetailInput = (e) => {
     setDetailState(e.target.value);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+
+    console.log(imgView);
+    selectedFiles.append("title", titleState.value);
+    selectedFiles.append("category", selectState.value);
+    selectedFiles.append("price", priceState.value);
+    selectedFiles.append("description", detailState);
+
+    fetch(`http://localhost:8080/admin`, {
+      method: "POST",
+      // headers: {
+      //   "Content-Type": "multipart/form-data",
+      // },
+      body: selectedFiles,
+    })
+      .then((response) => {
+        return response.text();
+      })
+      .catch((error) => console.log(error));
+
     console.log(titleState, selectState, imgView, detailState);
   };
 
   return (
     <section className="content">
       <div className="content__wrapper">
-        <form action="submit" onSubmit={submitHandler}>
+        <form onSubmit={submitHandler}>
           <table className="table">
             <colgroup>
               <col className="table_col-1" width="20%" />
@@ -127,7 +152,7 @@ const Admin = () => {
             <Tbody>
               <Trow>
                 <TdataTitle>
-                  <label htmlFor="productTitle">상품명</label>
+                  <label htmlFor="productTitle">제품명</label>
                 </TdataTitle>
                 <Tdata>
                   <div className="table__cate">
@@ -162,6 +187,7 @@ const Admin = () => {
                       onBlur={priceBlurHandler}
                       value={priceState.value}
                     />
+                    원
                   </div>
                 </Tdata>
               </Trow>
@@ -227,7 +253,6 @@ const Admin = () => {
           <button
             className="btn form__button"
             type="submit"
-            onSubmit={submitHandler}
             disabled={!formIsValid}
           >
             등록하기
