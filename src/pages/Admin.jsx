@@ -65,7 +65,7 @@ const Admin = () => {
   });
   const [imgView, setImgView] = useState({});
   const [detailState, setDetailState] = useState("");
-  const [selectedFiles, setSelectedFiles] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState([]);
 
   //title, selectHandler validation check???
   const [formIsValid, setFormIsValid] = useState(false);
@@ -99,10 +99,9 @@ const Admin = () => {
   };
 
   const imgHandler = (imgData, imgId, file) => {
-    const formData = new FormData();
-    formData.append(imgId, file);
     console.log(file);
-    setSelectedFiles(formData);
+    const newFileData = { id: imgId, data: file };
+    setSelectedFiles((prevFiles) => [...prevFiles, newFileData]);
 
     setImgView({ ...imgView, [imgId]: `${imgData}` });
   };
@@ -115,17 +114,23 @@ const Admin = () => {
     e.preventDefault();
 
     console.log(imgView);
-    selectedFiles.append("title", titleState.value);
-    selectedFiles.append("category", selectState.value);
-    selectedFiles.append("price", priceState.value);
-    selectedFiles.append("description", detailState);
+
+    const formData = new FormData();
+    for (const fileData of selectedFiles) {
+      formData.append(fileData.id, fileData.data);
+    }
+
+    formData.append("title", titleState.value);
+    formData.append("category", selectState.value);
+    formData.append("price", priceState.value);
+    formData.append("description", detailState);
 
     fetch(`http://localhost:8080/admin`, {
       method: "POST",
       // headers: {
       //   "Content-Type": "multipart/form-data",
       // },
-      body: selectedFiles,
+      body: formData,
     })
       .then((response) => {
         return response.text();
